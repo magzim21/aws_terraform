@@ -18,5 +18,5 @@ So I removed `backend "remote"` from **.tf** file and passed credentials by user
 - *How to recreate ASG instances when Resource Template was changed?*
 
 
-(AWS)[https://docs.aws.amazon.com/index.html]
-(Terraform HashiCorp)[https://registry.terraform.io/providers/hashicorp/aws/latest]
+[AWS](https://docs.aws.amazon.com/index.html)
+[Terraform HashiCorp](https://registry.terraform.io/providers/hashicorp/aws/latest)
