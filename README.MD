@@ -1,5 +1,5 @@
 # DevOps assignment (IaC)
-Task is done, code destroys and applies smoothly. ✅
+Task is done, infrastructure is able to be created and destroyed smoothly. ✅
 
 Goal: Implement Terraform code, which would deploy an EC2 instance, running within ASG with ELB in front of it. This instance, through ELB, should share port 22 (SSH port) to outside Internet. 
 In 	general infrastructure should look like this. Internet --> ELB --> ASG( EC2 )
