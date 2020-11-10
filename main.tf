@@ -10,8 +10,8 @@ terraform {
 }
 
 
-# Remote terraforom plan reports missing input vars  
-# # https://github.com/hashicorp/terraform/issues/23115
+
+### USER INPUT
 variable "aws_accesskey" {
   type = string
 }
@@ -55,8 +55,9 @@ resource "aws_autoscaling_group" "asg" {
   launch_template {
     id      = aws_launch_template.my_ec2_templ.id
     version = "$Latest"
+    }
   }
-}
+
 
 
 resource "aws_launch_template" "my_ec2_templ" {
@@ -68,6 +69,7 @@ resource "aws_launch_template" "my_ec2_templ" {
   key_name = aws_key_pair.deployer.key_name
 
   vpc_security_group_ids = [aws_security_group.simple_web_sg.id, data.aws_security_group.default.id]
+
 }
 
 
@@ -95,7 +97,7 @@ resource "aws_security_group" "simple_web_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    # think about security
+    # put trusted static ip addresses here
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -136,5 +138,4 @@ resource "aws_elb" "my_elb" {
 output "load_balancer_dns" {
   value = aws_elb.my_elb.dns_name 
 }
-
 
